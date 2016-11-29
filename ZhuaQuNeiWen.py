@@ -28,9 +28,9 @@ bianji = soup.select('.article-editor')[0].text.lstrip('李鹏') # lstrip('责�
 
 print(title)
 # print(time)
-print(timesource)
-print(dt)
-print(t)
+# print(timesource)
+# print(dt)
+# print(t)
 print(laiyuan)
 print(wenzhang)
 print(bianji)
