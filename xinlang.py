@@ -9,3 +9,4 @@ for news in soup.select('.news-item'):
         time = news.select('.time')[0].text
         a = news.select('a')[0]['href']
         print(time, h2, a)
+# test
