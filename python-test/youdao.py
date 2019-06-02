@@ -1,12 +1,10 @@
-# 爬取有道翻译内容，在本地创建窗口，输入需要翻译的内容进行翻译
-
 import urllib.request
 import urllib.parse
 import json
 import time
 
 while True:
-    content = input("Please input the content of the need to be translated： ")
+    content = input("请输入需要翻译的内容： ")
     if content == 'q!':
         break
     
@@ -14,7 +12,7 @@ while True:
 
     '''
     head = {}
-    head['User-Agent'] = 'Is my user agent'
+    head['User-Agent'] = 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
     '''
 
     data = {}
@@ -29,12 +27,11 @@ while True:
     data = urllib.parse.urlencode(data).encode('utf-8')
 
     req = urllib.request.Request(url, data)
-    req.add_header('User-Agent', 'Is my user agent')
+    req.add_header('User-Agent', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36')
 
     response = urllib.request.urlopen(req)
     html = response.read().decode('utf-8')
 
     target = json.loads(html)
-
-    print("Translation results：%s" % (target['translateResult'][0][0]['tgt']))
-    time.sleep(1)
+    print("翻译结果：%s" % (target['translateResult'][0][0]['tgt']))
+    #time.sleep(1)
